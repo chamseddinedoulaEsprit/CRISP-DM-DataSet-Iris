@@ -1,0 +1,58 @@
+# Étape 1 : Business Understanding
+
+## Objectifs Métier
+- Contexte : Un jardin botanique veut identifier rapidement les espèces d'iris pour des applications éducatives.
+- Objectifs : Automatiser la classification pour réduire les erreurs humaines et accélérer le processus (cible : accuracy >95%, temps de prédiction <1s par fleur).
+
+## Objectifs Data Science
+- Problème : Classification multi-classe supervisée.
+- Succès mesuré par : Accuracy, Precision, Recall, F1-score.
+- Contraintes : Dataset petit (150 échantillons), mais suffisant pour un proof-of-concept.
+- Ressources : Python avec scikit-learn.
+
+
+
+# Étape 2 : Data Understanding
+
+## Description
+Ici, nous chargeons et explorons le dataset Iris pour comprendre sa structure, qualité et patterns.
+- Features : sepal_length, sepal_width, petal_length, petal_width (toutes numériques).
+- Target : species (catégorique : setosa, versicolor, virginica).
+- Attentes : Pas de valeurs manquantes (dataset classique propre), mais vérifions.
+
+
+
+
+# Étape 3 : Data Preparation
+
+## Description
+Préparer les données : Nettoyage (aucun ici), encodage, split, scaling.
+- Split : 80% train, 20% test.
+- Scaling : StandardScaler pour .
+
+
+
+# Étape 4 : Modeling
+
+## Description
+Entraîner des modèles de classification. Comparer via cross-validation.
+- Algos testés : LogisticRegression, DecisionTree, RandomForest, KNN.
+- Métrique principale : Accuracy.
+
+
+
+
+# Étape 5 : Evaluation
+
+## Description
+Évaluer sur test set. Vérifier si accuracy >95%.
+- Métriques : Accuracy, Confusion Matrix, Classification Report.
+
+
+
+# Étape 6 : Deployment
+
+## Description
+Préparer pour production : Exporter le modèle, exemple d'API simple ou fonction de prédiction.
+- Outils : Joblib pour sauvegarde.
+- Scénario : Intégrer dans une app web (ex. Flask).
